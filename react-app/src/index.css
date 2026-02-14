@@ -1,48 +1,5 @@
-*{
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight:bold;
-}
-body{
-    background-color:rgb(255, 136, 136);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    overflow-y:hidden;
-}
-
-.get-info{
-    padding-left: 50px;
-    padding-right:50px;
-    padding-top:10px;
-    padding-bottom:10px;
-    text-align:center;
-    font-size:30px;
-    border-radius:10px;
-    background-color:black;
-    color:whitesmoke;
-    box-shadow: 0 0 100px hsl(0, 0%, 0%);
-}
-
-.title{
-    margin:0;
-}
-
-
-.txt{
-    border-radius:10px;
-    font-weight:normal;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.drop{
-    margin: 0;
-}
-
-
-.card{
-    background-color:beige;
-    border-radius: 10px;
-    box-shadow: 0 0 100px hsl(0, 0%, 0%);
-    text-align:center;
-    padding:20px
+@import 'tailwindcss';
+@theme {
+    --color-background: #111823;
+    --color-text: #ff4654;
 }

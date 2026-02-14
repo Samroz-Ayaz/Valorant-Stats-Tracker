@@ -31,19 +31,19 @@ function App() {
 	}
   return (
 	<>
-		<div className="get-info">
-			<p className="title">Username</p>
-			<input className="txt" onChange={handleNameChange}/>
-			<p className="title">Tag</p>
-			<input className="txt" onChange={handleTagChange}/>
-			<p className="title">Region</p>
-			<select className="drop" onChange={handleRegionChange}>
+		<div className="bg-background grid text-text font-bold justify-items-center .rounded-lg.shadow-md.p-6.bg-white">
+			<p className="">Username</p>
+			<input className="border rounded-xl" onChange={handleNameChange}/>
+			<p className="">Tag</p>
+			<input className="border rounded-xl" onChange={handleTagChange}/>
+			<p className="">Region</p>
+			<select className="" onChange={handleRegionChange}>
 				<option value="">Select an Option</option>
 				<option value="na">North America</option>
 				<option value="eu">Europe</option>
 			</select>
 			<br></br>
-			<button className="getRank" onClick={handleSubmit}>Get Rank</button>
+			<button className="bg-slate-700 px-10" onClick={handleSubmit}>Get Rank</button>
 		</div>
 		<br></br>
 		{showLoadCard ? (
