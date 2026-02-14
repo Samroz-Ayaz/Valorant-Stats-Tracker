@@ -30,20 +30,20 @@ function App() {
 		setShowCard(true)
 	}
   return (
-	<>
-		<div className="bg-background grid text-text font-bold justify-items-center .rounded-lg.shadow-md.p-6.bg-white">
-			<p className="">Username</p>
-			<input className="border rounded-xl" onChange={handleNameChange}/>
-			<p className="">Tag</p>
-			<input className="border rounded-xl" onChange={handleTagChange}/>
-			<p className="">Region</p>
-			<select className="" onChange={handleRegionChange}>
+	<div className="flex flex-col justify-items-center text-center min-h-screen">
+		<div className="bg-background text-text font-bold text-xl p-8 max-w-md mx-auto my-auto shadow-[0_0_80px_1px_#111823] rounded-xl">
+			<p className="text-2xl mb-1">Username</p>
+			<input className="border-2 border-white rounded-md" onChange={handleNameChange}/>
+			<p className="text-2xl mb-1 mt-2">Tag</p>
+			<input className="border-2 border-white rounded-md" onChange={handleTagChange}/>
+			<p className="text-2xl mb-1">Region</p>
+			<select className="border-2 border-white rounded-md" onChange={handleRegionChange}>
 				<option value="">Select an Option</option>
 				<option value="na">North America</option>
 				<option value="eu">Europe</option>
 			</select>
 			<br></br>
-			<button className="bg-slate-700 px-10" onClick={handleSubmit}>Get Rank</button>
+			<button className="bg-slate-700 px-10 hover:bg-slate-800 transition-all rounded mt-4" onClick={handleSubmit}>Get Rank</button>
 		</div>
 		<br></br>
 		{showLoadCard ? (
@@ -52,7 +52,7 @@ function App() {
 		{showCard ? (
 			<Card rank={data.curr_rank} peak={data.peak} peak_szn={data.peak_szn} loading={false}/>
 		): <></>}
-    </>
+    </div>
   );
 }
 export default App;
