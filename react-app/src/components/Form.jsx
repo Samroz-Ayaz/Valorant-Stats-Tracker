@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-function Form( { setData, setShowCard, setLoadShowCard }){
+function Form( { setRankData, setShowCard, setLoadShowCard }){
     const [name, setName] = useState("roz");
     const [tag, setTag] = useState("frag");
     const [region, setRegion] = useState("na")
@@ -22,7 +22,7 @@ function Form( { setData, setShowCard, setLoadShowCard }){
             return; 
         }
         const result = await response.json();
-        setData(result);
+        setRankData(result);
         setLoadShowCard(false);
         setShowCard(true);
 	}
@@ -39,7 +39,7 @@ function Form( { setData, setShowCard, setLoadShowCard }){
                 <option value="eu">Europe</option>
             </select>
             <br></br>
-            <button className="bg-slate-700 px-10 hover:bg-slate-800 transition-all rounded mt-4" onClick={handleSubmit}>Get Rank</button>
+            <button className="bg-slate-700 px-10 hover:bg-slate-800 transition-all rounded mt-4 w-2/3" onClick={handleSubmit}>Get Stats</button>
 		</div>
     )
 } 
