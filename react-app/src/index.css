@@ -3,3 +3,53 @@
     --color-background: #111823;
     --color-text: #ff4654;
 }
+
+@layer utilities {
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes zoom {
+    from {
+      scale: 0;
+    }
+    to {
+      scale: 1;
+    }
+  }
+
+
+
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.5s ease-out forwards;
+    margin-block: auto;
+  }
+
+  .animate-fade-in-down {
+    animation: fadeInDown 0.5s ease-out forwards;
+    margin-block: auto;
+  }
+  .animate-zoom {
+    animation: zoom 0.25s ease-out forwards;
+    margin-block: auto;
+  }
+}

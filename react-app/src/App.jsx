@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Card from './Card';
 import './index.css'
-import haven from './assets/havenn.jpg';
 
 function App() {
 	const [name, setName] = useState("roz");
@@ -34,11 +33,11 @@ function App() {
         setShowCard(true);
 	}
   return (
-	<div className="min-h-screen w-full relative bg-[url(./assets/havenn.jpg)] bg-no-repeat bg-size-[120%] bg-position-[20%_10]">
+	<div className="min-h-screen w-full relative bg-[url(./assets/havenn.jpg)] bg-no-repeat bg-cover bg-position-center bg-position-[20%_10]">
 		<div className="absolute inset-0 bg-black/40">
 			<div className="absolute inset-0 h-full w-full bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-size-[24px_24px]" >
 				<div className="flex text-center justify-center min-h-screen transition-all gap-20">
-					<div className="flex-col border-background border bg-black/30 backdrop-brightness-80 backdrop-blur-[3px] text-text font-bold text-xl p-8 my-auto shadow-[0_0_80px_10px_#111823] rounded-xl">
+					<div className="animate-fade-in-down flex-col border-background border bg-black/30 backdrop-brightness-80 backdrop-blur-[3px] text-text font-bold text-xl p-8 my-auto shadow-[0_0_80px_10px_#111823] rounded-xl">
 						<p className="text-4xl mb-1">Username</p>
 						<input className="text-2xl border-2 border-white rounded-md" onChange={handleNameChange}/>
 						<p className="text-4xl mb-1 mt-2">Tag</p>
@@ -53,10 +52,15 @@ function App() {
 						<button className="bg-slate-700 px-10 hover:bg-slate-800 transition-all rounded mt-4" onClick={handleSubmit}>Get Rank</button>
 					</div>
 					{showLoadCard && (
-					<Card rank="" peak="" peak_szn="" loading ={true} className=""/>
+						<div className="animate-zoom backdrop-blur-[3px]">
+							<Card rank="" peak="" peak_szn="" loading ={true} className=""/>
+						</div>
+					
 					)}
 					{showCard && (
-						<Card rank={data.curr_rank} peak={data.peak} peak_szn={data.peak_szn} loading={false} className=""/>
+						<div className="animate-fade-in-up backdrop-blur-[3px]">
+							<Card rank={data.curr_rank} peak={data.peak} peak_szn={data.peak_szn} loading={false} className=""/>
+						</div>
 					)}
 				</div>
 			</div>
