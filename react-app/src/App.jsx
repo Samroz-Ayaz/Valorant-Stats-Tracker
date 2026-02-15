@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Card from './Card';
-import './index.css';
-//https://youtu.be/CgkZ7MvWUAA?si=UMZnTqOjwH3nrT6K&t=7757
+import './index.css'
 function App() {
 	const [name, setName] = useState("roz");
 	const [tag, setTag] = useState("frag");
@@ -19,19 +18,27 @@ function App() {
         setRegion(event.target.value);
     }
 	const handleSubmit = async() => {
-		setShowCard(false)
-		setLoadShowCard(true)
-		const response = await fetch(`http://127.0.0.1:8000/rank/${name}/${tag}/${region}`);
-		if(!response.ok){
-			throw new Error("Couldnt fetch the data")
-		}
-		setData(await response.json());
-		setLoadShowCard(false)
-		setShowCard(true)
+		setShowCard(false);
+		setLoadShowCard(true);
+        const response = await fetch(`http://localhost:8000/rank/${name}/${tag}/${region}`);
+        
+        if (!response.ok) {
+            // Instead of just throwing, handle the UI state here
+            console.error("Fetch failed");
+            setLoadShowCard(false);
+            return; 
+        }
+
+        const result = await response.json();
+        setData(result);
+        
+        // 2. Data is ready, swap loading for the result card
+        setLoadShowCard(false);
+        setShowCard(true);
 	}
   return (
-	<div className="flex flex-col justify-items-center text-center min-h-screen">
-		<div className="bg-background text-text font-bold text-xl p-8 max-w-md mx-auto my-auto shadow-[0_0_80px_1px_#111823] rounded-xl">
+	<div className="flex flex-col md:flex-row justify-center text-center min-h-screen p-4 gap-20 transition-all">
+		<div className="flex-col bg-background text-text font-bold text-xl p-8 max-w-md my-auto h-full shadow-[0_0_80px_1px_#111823] rounded-xl">
 			<p className="text-2xl mb-1">Username</p>
 			<input className="border-2 border-white rounded-md" onChange={handleNameChange}/>
 			<p className="text-2xl mb-1 mt-2">Tag</p>
@@ -46,12 +53,14 @@ function App() {
 			<button className="bg-slate-700 px-10 hover:bg-slate-800 transition-all rounded mt-4" onClick={handleSubmit}>Get Rank</button>
 		</div>
 		<br></br>
-		{showLoadCard ? (
-			<Card rank="" peak="" peak_szn="" loading ={true}/>
-		): <></>}
-		{showCard ? (
-			<Card rank={data.curr_rank} peak={data.peak} peak_szn={data.peak_szn} loading={false}/>
-		): <></>}
+		<div className="flex text-white max-w-md my-auto">
+				{showLoadCard ? (
+				<Card rank="" peak="" peak_szn="" loading ={true} className="h-full"/>
+				): <></>}
+				{showCard ? (
+					<Card rank={data.curr_rank} peak={data.peak} peak_szn={data.peak_szn} loading={false} className="h-full"/>
+				): <></>}
+			</div>
     </div>
   );
 }
