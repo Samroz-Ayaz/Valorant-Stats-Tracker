@@ -4,24 +4,24 @@ function Card({rank, peak, peak_szn, loading}) {
   return(
     <>
     {loading ? (
-      <div className="text-3xl flex flex-col text-white max-w-md my-auto shadow-[0_0_80px_1px_#111823] border-background border bg-black/30 backdrop-brightness-80 backdrop-blur-[3px] p-10 rounded-2xl">
+      <div className="animate-zoom text-3xl flex flex-col text-white my-auto shadow-[0_0_80px_1px_#111823] border-background border bg-black/30 backdrop-brightness-80 backdrop-blur-[3px] p-10 rounded-2xl">
         <h1 className="animate-pulse">Loading...</h1>   
       </div>
     ):(
 
-      <div className="flex flex-col text-white max-w-md my-auto shadow-[0_0_80px_1px_#111823] border-background border bg-black/30 backdrop-brightness-80 backdrop-blur-[3px] p-5 rounded-2xl">
-        <h1 className="text-4xl text-text mb-3">Current Rank:</h1>
+      <div className="md:h-full animate-fade-in-up flex flex-col text-white shadow-[0_0_80px_1px_#111823] border-background border bg-black/30 backdrop-brightness-80 backdrop-blur-[3px] rounded-2xl p-5 font-bold">
+        <h1 className="text-1xl md:text-4xl lg:text-5xl mb-2 text-text">Current Rank:</h1>
         <div className="flex justify-center">
-          <img src={`../../public/ranks/${rank}.png`} className="w-1/4 my-auto mx-auto"></img>
-          <h1 className="my-auto mx-auto text-3xl">{rank}</h1>
+          <img src={`../../ranks/${rank}.png`} className="w-1/6 mx-auto my-auto"></img>
+          <h1 className="mx-auto my-auto text-2xl">{rank}</h1>
         </div>
-        <h1 className="text-4xl text-text mb-3">Peak:</h1>
+        <h1 className="text-1xl md:text-4xl lg:text-5xl mb-2 mt-4 text-text">Peak:</h1>
         <div className="flex justify-center">
-          <img src={`../../public/ranks/${peak}.png`} className="w-1/4 my-auto mx-auto"></img>
-          <h1 className="my-auto mx-auto text-3xl">{peak}</h1>
+          <img src={`../../ranks/${peak}.png`} className="w-1/6 mx-auto my-auto"></img>
+          <h1 className="mx-auto my-auto text-2xl">{peak}</h1>
         </div>
-        <h1 className="text-4xl text-text mb-3">In:</h1>
-        <h1 className="text-3xl">{peak_szn}</h1>
+        <h1 className="text-1xl md:text-4xl lg:text-5xl mb-2 mt-4 text-text">In:</h1>
+        <h1 className="text-2xl">{peak_szn}</h1>
     </div>
     )}
     </>
