@@ -27,7 +27,7 @@ function Form( { setRankData, setShowCard, setLoadShowCard }){
         setShowCard(true);
 	}
     return(
-        <div className="animate-fade-in-down flex-col text-center border-background border bg-black/30 backdrop-brightness-80 backdrop-blur-[3px] text-text font-bold shadow-[0_0_80px_10px_#111823] rounded-xl p-8 h-full">
+        <div className="animate-fade-in-down flex-col text-center border-background border bg-black/30 backdrop-brightness-80 backdrop-blur-[3px] text-text font-bold shadow-[0_0_80px_10px_#111823] p-8 rounded-xl h-full">
             <p className="text-1xl md:text-4xl lg:text-5xl mb-2">Username</p>
             <input className="text-2xl border-2 text-center border-background text-white rounded-md w-3/4 h-1/12 mb-4" onChange={handleNameChange}/>
             <p className="text-1xl md:text-4xl lg:text-5xl mb-2">Tag</p>
