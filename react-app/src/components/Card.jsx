@@ -9,7 +9,7 @@ function Card({rank, peak, peak_szn, loading}) {
       </div>
     ):(
 
-      <div className="animate-fade-in-up text-white shadow-[0_0_80px_1px_#111823] border-background border bg-black/30 backdrop-brightness-80 backdrop-blur-[3px] rounded-2xl font-bold text-center p-8 h-full">
+      <div className="animate-fade-in-down text-white shadow-[0_0_80px_1px_#111823] border-background border bg-black/30 backdrop-brightness-80 backdrop-blur-[3px] rounded-2xl font-bold text-center p-8 h-full">
         <h1 className="text-1xl md:text-4xl lg:text-5xl mb-2 text-text">Current Rank:</h1>
         <div className="flex justify-center">
           <img src={`../../ranks/${rank}.png`} className="w-1/6 mx-auto my-auto"></img>
