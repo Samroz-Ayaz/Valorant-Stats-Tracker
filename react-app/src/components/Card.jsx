@@ -4,7 +4,7 @@ function Card({rank, peak, peak_szn, loading}) {
   return(
     <>
     {loading ? (
-      <div className="animate-zoom flex items-center justify-center text-3xl text-white shadow-[0_0_80px_1px_#111823] border-background border bg-black/30 backdrop-brightness-80 backdrop-blur-[3px] rounded-2xl font-bold text-center p-8 h-full">
+      <div className="animate-fade-in-down flex items-center justify-center text-3xl text-white shadow-[0_0_80px_1px_#111823] border-background border bg-black/30 backdrop-brightness-80 backdrop-blur-[3px] rounded-2xl font-bold text-center p-8 h-full">
         <h1 className="animate-pulse my-auto">Loading...</h1>   
       </div>
     ):(

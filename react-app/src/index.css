@@ -33,7 +33,7 @@
 
   @keyframes fadeInRight {
     from {
-      transform: translateX(250px);
+      transform: translateX(125px);
     }
     to {
       transform: translateX(0);
@@ -42,7 +42,7 @@
 
   @keyframes fadeInLeft {
     from {
-      transform: translateX(-250px);
+      transform: translateX(-125px);
     }
     to {
       transform: translateX(0);
