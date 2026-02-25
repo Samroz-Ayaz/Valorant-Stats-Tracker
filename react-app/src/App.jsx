@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Card from './components/Card';
 import Form from './components/Form';
 import MatchCard from './components/MatchCard';
@@ -9,11 +9,11 @@ function App() {
 	const [matchData, setMatchData] = useState("loading")
 	const [showCard, setShowCard] = useState(false)
 	const [showLoadCard, setLoadShowCard] = useState(false)
+	const [animate, setAnimate] = useState(false)
   return (
-	<div className="h-screen w-full relative bg-background md:bg-[url(./assets/havenn.jpg)] bg-no-repeat bg-auto md:bg-cover md:bg-position-center bg-position-[20%_10] overflow-hidden">
-		<div className="absolute inset-0 bg-black/30">
+	<div className="h-screen w-full relative md:bg-[url(./assets/havenn.jpg)] bg-no-repeat bg-auto md:bg-cover md:bg-position-center bg-position-[20%_10] overflow-hidden">
 			<div className="p-4 grid grid-cols-1 absolute inset-0 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-size-[24px_24px] place-items-center" >		
-				<div className="grid grid-cols-2 items-center justify-center transition-all gap-6 md:gap-10 w-full max-w-5xl">
+				<div className="grid grid-cols-2 items-center justify-center gap-6 md:gap-10 w-full max-w-5xl">
 					{(showLoadCard || showCard) ? (
 						<div className="h-full w-full col-span-1 animate-fade-in-down">
 							<Form setMatchData={setMatchData} setRankData={setRankData} setShowCard={setShowCard} setLoadShowCard={setLoadShowCard}/>
@@ -42,7 +42,6 @@ function App() {
 					}
 				</div>
 			</div>
-		</div>
 	</div>
   );
 }

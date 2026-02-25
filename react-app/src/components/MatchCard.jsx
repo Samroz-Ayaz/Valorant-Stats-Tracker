@@ -2,8 +2,8 @@ function MatchCard( { matchData }){
     console.log(matchData.matches.map((game) => game.score));
     return(
         <div className="overflow-hidden animate-fade-in-up text-white shadow-[0_0_80px_1px_#111823] border-background border  backdrop-brightness-80 backdrop-blur-[3px] rounded-2xl">
-            <div className="py-5 flex flex-col pl-4 h-50 overflow-y-auto custom-scrollbar">  
-                {matchData.matches.map((game) => 
+            <div className="py-5 flex flex-col pl-4 h-70 overflow-y-auto custom-scrollbar">  
+                {matchData.matches.map((game) =>
                 <div className="p-3 mb-5 mx-auto w-98/100 border shadow-[0_0_80px_1px_#111823] border-background bg-black/30 hover:bg-black/60 transition-all duration-300 pr-5 rounded-xl">
                     <div className="text-text mt-3 flex justify-between border-b-2 border-white">
                         <h1 className="text-2xl">
