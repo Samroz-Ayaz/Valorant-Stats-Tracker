@@ -68,7 +68,7 @@ def get_rank(puuid, region):
             return f"Error code: {code}"
 
 def get_matches(puuid, region):
-    url = f"https://api.henrikdev.xyz/valorant/v3/by-puuid/matches/{region}/{puuid}?size=5"
+    url = f"https://api.henrikdev.xyz/valorant/v3/by-puuid/matches/{region}/{puuid}?size=10"
     response = requests.get(url, headers=headers)
     code = response.status_code
     match code:
