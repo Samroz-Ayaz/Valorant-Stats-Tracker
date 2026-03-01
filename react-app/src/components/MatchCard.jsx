@@ -14,13 +14,9 @@ function MatchCard( { matchData, setOneMatch, setShowMatch }){
                     </div>
                     <div className="pl-5 text-white">
                     <div className="mt-4 flex justify-between">
-                        <h1 className="text-xl">KD: {(game.stats.kills / game.stats.deaths).toFixed(2)}</h1> 
+                        <h1 className="text-xl">KDA — {game.stats.kills} / {game.stats.deaths} / {game.stats.assists}</h1> 
                         <h1>Score: {(game.stats.score)}</h1>
-                    </div>
-                    <h1 className="text-xl">Kills: {game.stats.kills}</h1>
-                    <h1 className="text-xl">Deaths: {game.stats.deaths}</h1>
-                    <h1 className="text-xl">Assists: {game.stats.assists}</h1>
-                    {game.stats.hs_percent != 0 ? <h1 className="text-xl">Headshot Percent: {game.stats.hs_percent}%</h1> : <></>}  
+                    </div> 
                     </div>
                         
                     

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-function Form( { setMatchData, setRankData, setShowCard, setLoadShowCard }){
+function Form( { setShowMatch, setMatchData, setRankData, setShowCard, setLoadShowCard }){
     const [name, setName] = useState("roz");
     const [tag, setTag] = useState("frag");
     const [region, setRegion] = useState("na")
@@ -33,6 +33,7 @@ function Form( { setMatchData, setRankData, setShowCard, setLoadShowCard }){
         setMatchData(matchResult);
         setLoadShowCard(false);
         setShowCard(true);
+        setShowMatch(false);
 	}
     return(
         <div className="animate-fade-in-down text-center border-background border bg-black/30 backdrop-brightness-80 backdrop-blur-[3px] text-text font-bold shadow-[0_0_80px_10px_#111823] p-8 rounded-2xl h-full ">

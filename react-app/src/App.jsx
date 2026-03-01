@@ -19,14 +19,14 @@ function App() {
 				<div className="grid grid-cols-2 items-center justify-center gap-6 md:gap-10 w-full max-w-5xl">
 					{showLoadCard ? (
 						<div className="animate-fade-in-up h-full w-full col-span-1">
-							<Form  setMatchData={setMatchData} setRankData={setRankData} setShowCard={setShowCard} setLoadShowCard={setLoadShowCard}/>
+							<Form  setShowMatch={setShowMatch} setMatchData={setMatchData} setRankData={setRankData} setShowCard={setShowCard} setLoadShowCard={setLoadShowCard}/>
 						</div>
 						): showCard ? (
 						<div className="animate-fade-in-down h-full w-full justify-self-center col-span-1">
-							<Form setMatchData={setMatchData}  setRankData={setRankData} setShowCard={setShowCard} setLoadShowCard={setLoadShowCard}/>
+							<Form setShowMatch={setShowMatch} setMatchData={setMatchData}  setRankData={setRankData} setShowCard={setShowCard} setLoadShowCard={setLoadShowCard}/>
 						</div>
 						): <div className="h-full w-1/2 justify-self-center col-span-2">
-							<Form setMatchData={setMatchData}  setRankData={setRankData} setShowCard={setShowCard} setLoadShowCard={setLoadShowCard}/>
+							<Form setShowMatch={setShowMatch} setMatchData={setMatchData}  setRankData={setRankData} setShowCard={setShowCard} setLoadShowCard={setLoadShowCard}/>
 						</div>}
 					
 					{showLoadCard && (
