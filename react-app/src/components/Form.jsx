@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-function Form( { setShowMatch, setMatchData, setRankData, setShowCard, setLoadShowCard }){
+function Form( { setShowMatchCard, setAccFound, setShowMatch, setMatchData, setRankData, setShowCard, setLoadShowCard }){
     const [name, setName] = useState("roz");
     const [tag, setTag] = useState("frag");
     const [region, setRegion] = useState("na")
@@ -14,6 +14,7 @@ function Form( { setShowMatch, setMatchData, setRankData, setShowCard, setLoadSh
     }
 	const handleSubmit = async() => {
 		setShowCard(false);
+        setShowMatchCard(false);
 		setLoadShowCard(true);
         const response = await fetch(`http://localhost:8000/rank/${name}/${tag}/${region}`);
         const response2 = await fetch(`http://127.0.0.1:8000/match/${name}/${tag}/${region}`);
@@ -29,11 +30,20 @@ function Form( { setShowMatch, setMatchData, setRankData, setShowCard, setLoadSh
         }
         const rankResult = await response.json();
         const matchResult = await response2.json();
-        setRankData(rankResult);
-        setMatchData(matchResult);
-        setLoadShowCard(false);
-        setShowCard(true);
-        setShowMatch(false);
+        if(typeof(rankResult) == "string"){
+            console.log(rankResult)
+            setAccFound(false);
+            setLoadShowCard(false);
+            setShowCard(true);
+        } else{
+            setRankData(rankResult);
+            setMatchData(matchResult);
+            setLoadShowCard(false);
+            setShowCard(true);
+            setShowMatchCard(true);
+            setShowMatch(false);
+        }
+        
 	}
     return(
         <div className="animate-fade-in-down text-center border-background border bg-black/30 backdrop-brightness-80 backdrop-blur-[3px] text-text font-bold shadow-[0_0_80px_10px_#111823] p-8 rounded-2xl h-full ">

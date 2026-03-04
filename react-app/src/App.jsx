@@ -12,6 +12,8 @@ function App() {
 	const [showCard, setShowCard] = useState(false)
 	const [showLoadCard, setLoadShowCard] = useState(false)
 	const [showMatch, setShowMatch] = useState(false)
+	const [showMatchCard, setShowMatchCard] = useState(false)
+	const [accFound, setAccFound] = useState(true)
 
   return (
 	<div className="h-screen w-full relative bg-[url(./assets/havenn.jpg)] bg-no-repeat bg-cover md:bg-position-center bg-position-[20%_10] overflow-hidden">
@@ -19,27 +21,27 @@ function App() {
 				<div className="grid grid-cols-2 items-center justify-center gap-6 md:gap-10 w-full max-w-5xl">
 					{showLoadCard ? (
 						<div className="animate-fade-in-up h-full w-full col-span-1">
-							<Form  setShowMatch={setShowMatch} setMatchData={setMatchData} setRankData={setRankData} setShowCard={setShowCard} setLoadShowCard={setLoadShowCard}/>
+							<Form setShowMatchCard={setShowMatchCard} setAccFound={setAccFound} setShowMatch={setShowMatch} setMatchData={setMatchData} setRankData={setRankData} setShowCard={setShowCard} setLoadShowCard={setLoadShowCard}/>
 						</div>
 						): showCard ? (
 						<div className="animate-fade-in-down h-full w-full justify-self-center col-span-1">
-							<Form setShowMatch={setShowMatch} setMatchData={setMatchData}  setRankData={setRankData} setShowCard={setShowCard} setLoadShowCard={setLoadShowCard}/>
+							<Form setShowMatchCard={setShowMatchCard} setAccFound={setAccFound} setShowMatch={setShowMatch} setMatchData={setMatchData}  setRankData={setRankData} setShowCard={setShowCard} setLoadShowCard={setLoadShowCard}/>
 						</div>
 						): <div className="h-full w-1/2 justify-self-center col-span-2">
-							<Form setShowMatch={setShowMatch} setMatchData={setMatchData}  setRankData={setRankData} setShowCard={setShowCard} setLoadShowCard={setLoadShowCard}/>
+							<Form setShowMatchCard={setShowMatchCard} setAccFound={setAccFound} setShowMatch={setShowMatch} setMatchData={setMatchData}  setRankData={setRankData} setShowCard={setShowCard} setLoadShowCard={setLoadShowCard}/>
 						</div>}
 					
 					{showLoadCard && (
 						<div className="h-full w-full col-span-1">
-							<Card rank="" peak="" peak_szn="" loading ={true}/>
+							<Card rank="" peak="" peak_szn="" loading={true} accFound={accFound}/>
 						</div>	
 					)}
 					{showCard && (
 						<div className="h-full w-full col-span-1">
-							<Card rank={rankData.curr_rank} peak={rankData.peak} peak_szn={rankData.peak_szn} loading={false}/>
+							<Card rank={rankData.curr_rank} peak={rankData.peak} peak_szn={rankData.peak_szn} loading={false} accFound={accFound}/>
 						</div>
 					)}
-					{showCard && (!showMatch ?
+					{showMatchCard && (!showMatch ?
 						
 						<div className="h-full w-full col-span-2">
 							<MatchCard matchData={matchData} setOneMatch={setOneMatch} setShowMatch={setShowMatch}/>
