@@ -21,11 +21,13 @@ function Form( { setShowMatchCard, setAccFound, setShowMatch, setMatchData, setR
         if (!response.ok) {
             console.error("Fetch failed");
             setLoadShowCard(false);
+            setAccFound(false);
             return; 
         }
         if (!response2.ok) {
             console.error("Fetch failed");
             setLoadShowCard(false);
+            setAccFound(false);
             return; 
         }
         const rankResult = await response.json();
@@ -36,6 +38,7 @@ function Form( { setShowMatchCard, setAccFound, setShowMatch, setMatchData, setR
             setLoadShowCard(false);
             setShowCard(true);
         } else{
+            setAccFound(true);
             setRankData(rankResult);
             setMatchData(matchResult);
             setLoadShowCard(false);
@@ -58,7 +61,7 @@ function Form( { setShowMatchCard, setAccFound, setShowMatch, setMatchData, setR
                 <option value="eu" className="bg-slate-700">Europe</option>
             </select>
             <br></br>
-            <button className="bg-background hover:bg-gray-950 text-white transition-all rounded w-2/3 h-1/10 text-1xl md:text-2xl lg:text-3xl" onClick={handleSubmit}>Get Stats</button>
+            <button className="bg-background hover:bg-gray-950 hover:cursor-pointer text-white transition-all rounded w-2/3 h-1/10 text-1xl md:text-2xl lg:text-3xl" onClick={handleSubmit}>Get Stats</button>
 		</div>
     )
 } 
