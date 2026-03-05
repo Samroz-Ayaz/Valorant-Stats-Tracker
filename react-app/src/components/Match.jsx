@@ -6,8 +6,13 @@ function Match ({ setShowMatch, oneMatch }){
                 <img src={`../../Agents/${oneMatch.character}_icon.webp`} alt={oneMatch.character} className="w-1/11 ml-1 mr-5"></img>
                 <h1>{oneMatch.mode}</h1>
             </div>
+            {oneMatch.round_wins.map((data) =>(
+                <li className="">
+                    <h1>{data}  hello {oneMatch.team}</h1>
+                </li>))}
+
+                    
             
-            {/* <h1>{oneMatch.map}</h1> */}
         </div>
     )
 }

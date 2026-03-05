@@ -117,6 +117,7 @@ def match(name:str, tag:str, region:str):
                             "puuid": puuid,
                             "map" : meta['map'],
                             "mode" : meta['mode'],
+                            "team": player['team'],
                             "you_won": game_won,
                             "rounds": meta['rounds_played'],
                             "score": f"{match['teams']['blue']['rounds_won']} - {match['teams']['blue']['rounds_lost']}",
