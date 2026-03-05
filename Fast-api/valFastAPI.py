@@ -118,11 +118,13 @@ def match(name:str, tag:str, region:str):
                             "map" : meta['map'],
                             "mode" : meta['mode'],
                             "you_won": game_won,
+                            "rounds": meta['rounds_played'],
                             "score": f"{match['teams']['blue']['rounds_won']} - {match['teams']['blue']['rounds_lost']}",
                             "character":player['character'],
-                            "stats": player['stats']
-                            })         
-                        break   
+                            "stats": player['stats'],
+                            'round_wins':  [round['winning_team'] for round in match['rounds']]
+                            })
+                        break
     return return_dict
 
 @app.get("/rank/{name}/{tag}/{region}")
