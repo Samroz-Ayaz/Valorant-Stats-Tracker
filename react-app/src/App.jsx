@@ -16,7 +16,7 @@ function App() {
 	const [accFound, setAccFound] = useState(true)
 
   return (
-	<div className="h-screen w-full relative bg-[url(./assets/havenn.jpg)] bg-no-repeat bg-cover md:bg-position-center bg-position-[20%_10] overflow-hidden">
+	<div className="h-screen w-full relative bg-[url(./assets/havenn.jpg)] bg-no-repeat bg-fixed bg-cover overflow-x-hidden">
 			<div className="p-4 grid grid-cols-1 absolute inset-0 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-size-[24px_24px] place-items-center" >		
 				<div className="grid grid-cols-2 items-center justify-center gap-6 md:gap-10 w-full max-w-5xl">
 					{showLoadCard ? (
